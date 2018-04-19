@@ -23,6 +23,14 @@ if (Platform.OS === 'ios') {
         try {
             data = await response.json();
         } catch (err) {
+            if (response && response.resp && response.resp.data && response.resp.data.includes('SSL certificate')) {
+                throw {
+                    message: 'You need to use a valid client certificate in order to connect to this Mattermost server',
+                    status_code: 401,
+                    url,
+                };
+            }
+
             throw {
                 intl: {
                     id: 'mobile.request.invalid_response',
