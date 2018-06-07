@@ -66,6 +66,7 @@
     "shallow-equals": "1.0.0",
     "tinycolor2": "1.4.1",
     "url-parse": "1.4.0",
+    "uws": "10.148.0",
     "youtube-video-id": "0.0.2"
   },
   "devDependencies": {
