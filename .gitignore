@@ -87,3 +87,4 @@ ios/Pods/
 #editor-settings
 .vscode
 
+/fastlane/develop.sh
