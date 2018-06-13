@@ -20,7 +20,7 @@
 	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.tenfoldtech.bcbeta</string>
+		<string>group.com.tenfoldtech.bctest</string>
 	</array>
 </dict>
 </plist>

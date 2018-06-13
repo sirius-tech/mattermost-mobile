@@ -2455,6 +2455,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mattermost/Mattermost.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 104;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A7CCVVU3LC;
@@ -2488,7 +2489,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bcbeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bctest;
 				PRODUCT_NAME = Mattermost;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2505,6 +2506,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mattermost/Mattermost.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 104;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A7CCVVU3LC;
@@ -2538,7 +2540,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bcbeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bctest;
 				PRODUCT_NAME = Mattermost;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2596,7 +2598,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bcbeta.BCShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bctest.BCShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MattermostShare/MattermostShare-Bridging-Header.h";
@@ -2656,7 +2658,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bcbeta.BCShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tenfoldtech.bctest.BCShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MattermostShare/MattermostShare-Bridging-Header.h";
