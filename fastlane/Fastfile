@@ -397,7 +397,7 @@ platform :android do
         FileUtils.mkdir_p ".#{release_dir}"
       end
 
-      sh "mv .#{beta_dir}* .#{release_dir}"
+      # sh "mv .#{beta_dir}* .#{release_dir}"
 
       find_replace_string(
           path_to_file: './android/app/BUCK',
