@@ -382,13 +382,15 @@ platform :android do
       )
     end
 
-    if ENV['ANDROID_BUILD_FOR_RELEASE'] == 'true'
-      find_replace_string(
-          path_to_file: "#{beta_dir}MainApplication.java",
-          old_string: 'return BuildConfig.DEBUG;',
-          new_string: 'return false;'
-      )
-    end
+    # 'return BuildConfig.DEBUG;' not found in MainApplication.java,
+    # comment out the following:
+    # if ENV['ANDROID_BUILD_FOR_RELEASE'] == 'true'
+    #   find_replace_string(
+    #       # path_to_file: "#{beta_dir}MainApplication.java",
+    #       old_string: 'return BuildConfig.DEBUG;',
+    #       new_string: 'return false;'
+    #   )
+    # end
 
     if release_dir != beta_dir
       unless Dir.exist?(".#{release_dir}")
