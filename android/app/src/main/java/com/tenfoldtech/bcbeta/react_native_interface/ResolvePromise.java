@@ -1,4 +1,4 @@
-package com.mattermost.rnbeta.react_native_interface;
+package com.tenfoldtech.bcbeta.react_native_interface;
 
 import com.facebook.react.bridge.Promise;
 
