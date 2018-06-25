@@ -1,4 +1,4 @@
-package com.mattermost.rnbeta;
+package com.tenfoldtech.bcbeta;
 
 import android.app.PendingIntent;
 import android.content.Intent;

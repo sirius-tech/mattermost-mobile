@@ -1,4 +1,4 @@
-package com.mattermost.rnbeta;
+package com.tenfoldtech.bcbeta;
 
 import java.util.Arrays;
 import java.util.Collections;

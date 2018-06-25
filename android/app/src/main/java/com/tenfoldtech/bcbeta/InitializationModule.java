@@ -1,4 +1,4 @@
-package com.mattermost.rnbeta;
+package com.tenfoldtech.bcbeta;
 
 import android.app.Application;
 import android.support.annotation.Nullable;

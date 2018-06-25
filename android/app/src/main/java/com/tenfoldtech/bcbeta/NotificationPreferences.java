@@ -1,4 +1,4 @@
-package com.mattermost.rnbeta;
+package com.tenfoldtech.bcbeta;
 
 import android.content.Context;
 import android.content.SharedPreferences;
