@@ -17,4 +17,5 @@
     <string name="username_description">Set the username or email address to use to authenticate against the Mattermost Server.</string>
     <string name="vendor_title">EMM Vendor or Company Name</string>
     <string name="vendor_description">Name of the EMM vendor or company deploying the app. Used in help text when prompting for passcodes so users are aware why the app is being protected.</string>
+    <string name="gcm_sender_id">5867229142</string>
 </resources>
