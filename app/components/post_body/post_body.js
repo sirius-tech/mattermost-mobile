@@ -173,10 +173,12 @@ export default class PostBody extends PureComponent {
                 actions.push({text: formatMessage({id: 'post_info.edit', defaultMessage: 'Edit'}), onPress: onPostEdit});
             }
 
+            /*
             actions.push({
                 text: formatMessage({id: 'get_post_link_modal.title', defaultMessage: 'Copy Permalink'}),
                 onPress: this.props.onCopyPermalink,
             });
+            */
         }
 
         if (!isPendingOrFailedPost && !isPostEphemeral && canDelete && !hasBeenDeleted) {
