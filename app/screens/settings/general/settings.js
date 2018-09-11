@@ -268,15 +268,7 @@ class Settings extends PureComponent {
                         theme={theme}
                     />
                     }
-                    <SettingsItem
-                        defaultMessage='Report a Problem'
-                        i18nId='sidebar_right_menu.report'
-                        iconName='exclamation'
-                        iconType='fontawesome'
-                        onPress={this.openErrorEmail}
-                        showArrow={showArrow}
-                        theme={theme}
-                    />
+                    
                     <SettingsItem
                         defaultMessage='Advanced Settings'
                         i18nId='mobile.advanced_settings.title'
@@ -297,16 +289,6 @@ class Settings extends PureComponent {
                         theme={theme}
                     />
                     }
-                    <SettingsItem
-                        defaultMessage='About Mattermost'
-                        i18nId='about.title'
-                        iconName='ios-information-circle'
-                        iconType='ion'
-                        onPress={this.goToAbout}
-                        separator={false}
-                        showArrow={showArrow}
-                        theme={theme}
-                    />
                     <View style={style.divider}/>
                 </ScrollView>
             </View>
