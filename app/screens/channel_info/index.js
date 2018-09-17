@@ -67,7 +67,7 @@ function mapStateToProps(state) {
     const canEditChannel = !channelIsReadOnly && showManagementOptions(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin);
 
     return {
-        canDeleteChannel: showDeleteOption(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin),
+        canDeleteChannel: isChannelAdmin,//showDeleteOption(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin),
         canEditChannel,
         currentChannel,
         currentChannelCreatorName,
