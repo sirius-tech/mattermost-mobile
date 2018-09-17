@@ -50,6 +50,12 @@ import LocalConfig from 'assets/config';
 import App from './app';
 import './fetch_preconfig';
 
+import {purgeOfflineStore} from 'app/actions/views/root';
+import {ErrorTypes, GeneralTypes} from 'mattermost-redux/action_types';
+import {ViewTypes} from 'app/constants';
+import {batchActions} from 'redux-batched-actions';
+import {selectChannel} from 'mattermost-redux/actions/channels';
+
 const AUTHENTICATION_TIMEOUT = 5 * 60 * 1000;
 
 export const app = new App();
@@ -408,7 +414,7 @@ const handleAppActive = async () => {
 };
 
 const handleAppInActive = () => {
-    const {dispatch, getState} = store;
+    const {dispatch, getState} = store; 
     const theme = getTheme(getState());
 
     // When the app is sent to the background we set the time when that happens
@@ -420,6 +426,38 @@ const handleAppInActive = () => {
         theme.centerChannelBg,
     );
     dispatch(startDataCleanup());
+
+    //Reset app state
+    const state = getState() 
+    if (state.entities.users.currentUserId !== '' && state.entities.users.currentUserId !== 'undefined') {
+        store.dispatch(batchActions([
+            {
+                type: General.OFFLINE_STORE_RESET,
+                data: initialState,
+            },
+            {
+                type: ErrorTypes.RESTORE_ERRORS,
+                data: [...state.errors],
+            },
+            {
+                type: GeneralTypes.RECEIVED_APP_DEVICE_TOKEN,
+                data: state.entities.general.deviceToken,
+            },
+            {
+                type: GeneralTypes.RECEIVED_APP_CREDENTIALS,
+                data: {
+                    url: state.entities.general.credentials.url,
+                    token: state.entities.general.credentials.token,
+                },
+            },
+            {
+                type: ViewTypes.SERVER_URL_CHANGED,
+                serverUrl: state.entities.general.credentials.url || state.views.selectServer.serverUrl,
+            }, 
+        ])); 
+        EventEmitter.emit(NavigationTypes.RESTART_APP); 
+    } 
+    
 };
 
 AppState.addEventListener('change', handleAppStateChange);

@@ -23,6 +23,9 @@ import Config from 'assets/config';
 import {messageRetention} from './middleware';
 import {transformSet} from './utils';
 
+import { selectInitialChannel } from 'app/actions/views/channel';
+import { selectChannel } from 'mattermost-redux/actions/channels';
+
 function getAppReducer() {
     return require('../../app/reducers'); // eslint-disable-line global-require
 }
@@ -152,6 +155,7 @@ export default function configureAppStore(initialState) {
             let purging = false;
 
             // for iOS write the entities to a shared file
+            /* Disable shared cache
             if (Platform.OS === 'ios') {
                 store.subscribe(throttle(() => {
                     const state = store.getState();
@@ -184,6 +188,7 @@ export default function configureAppStore(initialState) {
                     }
                 }, 1000));
             }
+            */
 
             // check to see if the logout request was successful
             store.subscribe(async () => {
@@ -244,8 +249,8 @@ export default function configureAppStore(initialState) {
                         {
                             type: ViewTypes.SERVER_URL_CHANGED,
                             serverUrl: state.entities.general.credentials.url || state.views.selectServer.serverUrl,
-                        },
-                    ], 'BATCH_FOR_RESTART'));
+                        }, 
+                    ], 'BATCH_FOR_RESTART')); 
 
                     setTimeout(() => {
                         purging = false;
@@ -260,7 +265,7 @@ export default function configureAppStore(initialState) {
             autoRehydrate: {
                 log: false,
             },
-            blacklist: ['device', 'navigation', 'offline', 'requests'],
+            blacklist: ['device', 'navigation', 'offline', 'requests', 'entities.posts'],
             debounce: 500,
             transforms: [
                 setTransformer,
