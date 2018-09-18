@@ -59,7 +59,7 @@ export default function configureAppStore(initialState) {
 
     const typingBlackListFilter = createBlacklistFilter(
         'entities',
-        ['typing']
+        ['typing','posts']
     );
 
     const channelViewBlackList = {loading: true, refreshing: true, loadingPosts: true, postVisibility: true, retryFailed: true, loadMorePostsVisible: true};
@@ -265,7 +265,7 @@ export default function configureAppStore(initialState) {
             autoRehydrate: {
                 log: false,
             },
-            blacklist: ['device', 'navigation', 'offline', 'requests', 'entities.posts'],
+            blacklist: ['device', 'navigation', 'offline', 'requests'],
             debounce: 500,
             transforms: [
                 setTransformer,
