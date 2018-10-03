@@ -12,11 +12,17 @@ import {getProfilesInChannel, searchProfiles} from 'mattermost-redux/actions/use
 
 import ChannelMembers from './channel_members';
 
+import {getCurrentUserRoles} from 'mattermost-redux/selectors/entities/users';
+import {isAdmin as checkIsAdmin, isChannelAdmin as checkIsChannelAdmin, isSystemAdmin as checkIsSystemAdmin} from 'mattermost-redux/utils/user_utils';
+
 function makeMapStateToProps() {
     const getChannelMembers = makeGetProfilesInChannel();
 
     return (state) => {
-        const currentChannel = getCurrentChannel(state) || {};
+        const currentChannel = getCurrentChannel(state) || {}; 
+        const roles = getCurrentUserRoles(state);
+        const isChannelAdmin = checkIsChannelAdmin(roles);
+        const canManageUsers = isChannelAdmin; //canManageChannelMembers(state);
         let currentChannelMembers = [];
         if (currentChannel) {
             currentChannelMembers = getChannelMembers(state, currentChannel.id, true);
@@ -30,7 +36,7 @@ function makeMapStateToProps() {
             requestStatus: state.requests.users.getProfilesInChannel.status,
             searchRequestStatus: state.requests.users.searchProfiles.status,
             removeMembersStatus: state.requests.channels.removeChannelMember.status,
-            canManageUsers: canManageChannelMembers(state),
+            canManageUsers: canManageUsers,
         };
     };
 }

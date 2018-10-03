@@ -51,7 +51,7 @@ function mapStateToProps(state) {
     const isCurrent = currentChannel.id === state.entities.channels.currentChannelId;
     const isFavorite = favoriteChannels && favoriteChannels.indexOf(currentChannel.id) > -1;
     const roles = getCurrentUserRoles(state);
-    const canManageUsers = currentChannel.hasOwnProperty('id') ? canManageChannelMembers(state) : false;
+    
 
     let status;
     if (currentChannel.type === General.DM_CHANNEL) {
@@ -64,10 +64,14 @@ function mapStateToProps(state) {
     const isSystemAdmin = checkIsSystemAdmin(roles);
 
     const channelIsReadOnly = isCurrentChannelReadOnly(state);
-    const canEditChannel = !channelIsReadOnly && showManagementOptions(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin);
+    const canEditChannel = !channelIsReadOnly && isChannelAdmin; //showManagementOptions(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin);
+
+    const canDeleteChannel = isChannelAdmin; //showDeleteOption(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin)
+
+    const canManageUsers = currentChannel.hasOwnProperty('id') ? isChannelAdmin : false; //canManageChannelMembers(state) : false;
 
     return {
-        canDeleteChannel: isChannelAdmin,//showDeleteOption(state, config, license, currentChannel, isAdmin, isSystemAdmin, isChannelAdmin),
+        canDeleteChannel: canDeleteChannel,
         canEditChannel,
         currentChannel,
         currentChannelCreatorName,

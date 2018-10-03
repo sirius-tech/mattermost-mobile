@@ -243,11 +243,12 @@ class ChannelMembers extends PureComponent {
 
     renderMemberRow = (props) => {
         const enabled = props.id !== this.props.currentUserId;
+        const selectable = this.props.canManageUsers;
 
         return (
             <UserListRow
                 {...props}
-                selectable={true}
+                selectable={selectable}
                 enabled={enabled}
             />
         );
