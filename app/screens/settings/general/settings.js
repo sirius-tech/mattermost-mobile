@@ -268,7 +268,7 @@ class Settings extends PureComponent {
                         theme={theme}
                     />
                     }
-                    
+                    {/*
                     <SettingsItem
                         defaultMessage='Advanced Settings'
                         i18nId='mobile.advanced_settings.title'
@@ -278,6 +278,7 @@ class Settings extends PureComponent {
                         showArrow={showArrow}
                         theme={theme}
                     />
+                    */}
                     {LocalConfig.EnableMobileClientUpgrade && LocalConfig.EnableMobileClientUpgradeUserSetting &&
                     <SettingsItem
                         defaultMessage='Check for Upgrade'

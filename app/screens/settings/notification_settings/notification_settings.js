@@ -249,6 +249,7 @@ class NotificationSettings extends PureComponent {
                         showArrow={showArrow}
                         theme={theme}
                     />
+                    {/*
                     <SettingsItem
                         defaultMessage='Email'
                         i18nId='mobile.notification_settings.email'
@@ -259,6 +260,7 @@ class NotificationSettings extends PureComponent {
                         showArrow={showArrow}
                         theme={theme}
                     />
+                    */}
                     {autoResponder}
                     <View style={style.divider}/>
                 </ScrollView>
