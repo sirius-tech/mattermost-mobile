@@ -260,7 +260,7 @@ export default class PostBody extends PureComponent {
         );
     };
 
-    renderFileAttachments() {
+    renderFileAttachments = (style) => {
         const {
             fileIds,
             isFailed,
@@ -268,8 +268,8 @@ export default class PostBody extends PureComponent {
             onPress,
             postId,
             showLongPost,
-            toggleSelected,
-        } = this.props;
+            toggleSelected, 
+        } = this.props; 
 
         if (showLongPost) {
             return null;
@@ -282,16 +282,18 @@ export default class PostBody extends PureComponent {
             }
 
             attachments = (
-                <FileAttachmentList
-                    fileIds={fileIds}
-                    hideOptionsContext={this.hideOptionsContext}
-                    isFailed={isFailed}
-                    onLongPress={this.showOptionsContext}
-                    onPress={onPress}
-                    postId={postId}
-                    toggleSelected={toggleSelected}
-                    navigator={navigator}
-                />
+                <View style={style.attachment}>
+                    <FileAttachmentList 
+                        fileIds={fileIds}
+                        hideOptionsContext={this.hideOptionsContext}
+                        isFailed={isFailed}
+                        onLongPress={this.showOptionsContext}
+                        onPress={onPress}
+                        postId={postId}
+                        toggleSelected={toggleSelected}
+                        navigator={navigator}
+                    />
+                </View>
             );
         }
         return attachments;
@@ -495,7 +497,7 @@ export default class PostBody extends PureComponent {
                         {this.renderShowMoreOption(style)}
                     </View>
                     {this.renderPostAdditionalContent(blockStyles, messageStyle, textStyles)}
-                    {this.renderFileAttachments()}
+                    {this.renderFileAttachments(style)}
                     {this.renderReactions()}
                 </OptionsContext>
             );
@@ -546,6 +548,10 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
         messageContainerWithReplyBar: {
             flexDirection: 'row',
             flex: 1,
+        },
+        attachment: {
+            marginTop: 30,
+            marginBottom: 30,
         },
         pendingPost: {
             opacity: 0.5,
