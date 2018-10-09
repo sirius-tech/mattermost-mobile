@@ -155,7 +155,6 @@ export default function configureAppStore(initialState) {
             let purging = false;
 
             // for iOS write the entities to a shared file
-            /* Disable shared cache
             if (Platform.OS === 'ios') {
                 store.subscribe(throttle(() => {
                     const state = store.getState();
@@ -188,7 +187,6 @@ export default function configureAppStore(initialState) {
                     }
                 }, 1000));
             }
-            */
 
             // check to see if the logout request was successful
             store.subscribe(async () => {
