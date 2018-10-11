@@ -211,7 +211,7 @@ export default class CombinedSystemMessage extends React.PureComponent {
         } = this.props;
         const {formatMessage} = this.context.intl;
         const usersDisplayName = userProfiles.reduce((acc, user) => {
-            const displayName = displayUsername(user, teammateNameDisplay, true);
+            const displayName = displayUsername(user, teammateNameDisplay, true) + "(" + user.username + ")";
             acc[user.id] = displayName;
             acc[user.username] = displayName;
             return acc;

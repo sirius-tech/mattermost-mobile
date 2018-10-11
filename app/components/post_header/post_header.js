@@ -113,7 +113,7 @@ export default class PostHeader extends PureComponent {
             return (
                 <TouchableOpacity onPress={this.handleUsernamePress}>
                     <Text style={style.displayName}>
-                        {this.props.displayName}
+                        {this.props.displayName}({this.props.username})
                     </Text>
                 </TouchableOpacity>
             );
@@ -268,7 +268,7 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
         postInfoContainer: {
             alignItems: 'center',
             flexDirection: 'row',
-            marginTop: 10,
+            marginTop: 0,
         },
         pendingPost: {
             opacity: 0.5,

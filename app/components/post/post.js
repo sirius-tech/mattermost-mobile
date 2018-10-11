@@ -507,7 +507,7 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
         rightColumn: {
             flex: 1,
             flexDirection: 'column',
-            marginRight: 12,
+            marginRight: 0,
         },
         rightColumnPadding: {
             paddingBottom: 3,
@@ -515,8 +515,14 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
         messageContainerWithReplyBar: {
             flexDirection: 'row',
             flex: 1,
-            borderBottomWidth: 0.5,
-            borderBottomColor: changeOpacity(theme.centerChannelColor, 0.2),
+            backgroundColor: "#F8F8F8",
+            borderRadius: 10,
+            paddingRight: 10,
+            paddingLeft: 10,
+            paddingTop: 10,
+            paddingBottom: 10,
+            marginBottom: 10,
+            marginRight: 10,
         },
         consecutivePostContainer: {
             marginBottom: 10,

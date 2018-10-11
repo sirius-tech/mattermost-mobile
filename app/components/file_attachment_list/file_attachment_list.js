@@ -260,7 +260,7 @@ export default class FileAttachmentList extends Component {
 
 const styles = StyleSheet.create({
     flex: {
-        flex: 1,
+        flex: 1,  
     },
     failed: {
         opacity: 0.5,
