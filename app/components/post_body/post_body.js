@@ -147,7 +147,7 @@ export default class PostBody extends PureComponent {
                 });
             }
 
-            if (managedConfig.copyAndPasteProtection !== 'true') {
+            if (managedConfig.copyAndPasteProtection !== 'true' && this.props.fileIds.length == 0) {
                 actions.push({
                     text: formatMessage({id: 'mobile.post_info.copy_post', defaultMessage: 'Copy Post'}),
                     onPress: onCopyText,

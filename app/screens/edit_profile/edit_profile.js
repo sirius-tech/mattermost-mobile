@@ -283,7 +283,7 @@ export default class EditProfile extends PureComponent {
         const {formatMessage} = this.context.intl;
         const {currentUser, theme} = this.props;
         const {username} = this.state;
-        const disabled = currentUser.auth_service !== '';
+        const disabled = true; //currentUser.auth_service !== '';
 
         return (
             <EditProfileItem

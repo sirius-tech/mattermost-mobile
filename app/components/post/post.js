@@ -515,6 +515,8 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
         messageContainerWithReplyBar: {
             flexDirection: 'row',
             flex: 1,
+            borderBottomWidth: 0.5,
+            borderBottomColor: changeOpacity(theme.centerChannelColor, 0.2),
         },
         consecutivePostContainer: {
             marginBottom: 10,

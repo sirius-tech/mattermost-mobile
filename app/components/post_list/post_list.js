@@ -259,11 +259,12 @@ export default class PostList extends PureComponent {
 
             this.itemMeasurements[index] = NEW_MESSAGES_HEIGHT;
             return (
-                <NewMessagesDivider
-                    index={index}
-                    theme={this.props.theme}
-                    moreMessages={this.moreNewMessages}
-                />
+                <View></View>
+                // <NewMessagesDivider
+                //     index={index}
+                //     theme={this.props.theme}
+                //     moreMessages={this.moreNewMessages}
+                // />
             );
         } else if (isDateLine(item)) {
             this.itemMeasurements[index] = DATE_HEADER_HEIGHT;
