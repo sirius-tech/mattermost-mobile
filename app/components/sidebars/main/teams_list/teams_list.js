@@ -135,7 +135,7 @@ export default class TeamsList extends PureComponent {
                             defaultMessage='Teams'
                             style={styles.header}
                         />
-                        {moreAction}
+                        {/* {moreAction} */}
                     </View>
                 </View>
                 <FlatList
