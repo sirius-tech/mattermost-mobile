@@ -8,6 +8,7 @@ import {
     InteractionManager,
     Platform,
     StyleSheet,
+    View,
 } from 'react-native';
 
 import EventEmitter from 'mattermost-redux/utils/event_emitter';

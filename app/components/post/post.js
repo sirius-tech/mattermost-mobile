@@ -521,7 +521,8 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
             paddingLeft: 10,
             paddingTop: 10,
             paddingBottom: 10,
-            marginBottom: 10,
+            marginBottom: 5,
+            marginTop: 5,
             marginRight: 10,
         },
         consecutivePostContainer: {
